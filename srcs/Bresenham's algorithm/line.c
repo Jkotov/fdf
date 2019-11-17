@@ -6,41 +6,49 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 16:13:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/16 21:52:03 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/17 23:26:03 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
+#include "fdf.h"
 
-int	static	ft_abs(int n)
+void		line(t_pixel pixel_1st, t_pixel pixel_end, void *mlx_ptr, void *win_ptr)
 {
-	return (n > 0 ? n : -n);
-}
+	int			delta_x;
+	int			error;
+	int			delta_err;
+	double		*color;
+	double		*delta_color;
 
-void		line(t_pixel pixel_Start, t_pixel pixel_End, void *mlx_ptr, void *win_ptr)
-{
-	int deltax = ft_abs(pixel_End.x - pixel_Start.x);
-	int deltay = ft_abs(pixel_End.y - pixel_Start.y);
-	int error = 0;
-	int deltaerr = deltay;
-	int diry;
-	diry = pixel_End.y - pixel_Start.y > 0 ? 1 : -1;
-	while (pixel_Start.x != pixel_End.x)
+
+	delta_color = color_delta(pixel_1st, pixel_end);
+	delta_x = ft_abs((int)pixel_end.x - (int)pixel_1st.x);
+	color = color_from_int_to_arr(pixel_1st.color);
+	error = 0;
+	delta_err = ft_abs((int)pixel_end.y - (int)pixel_1st.y);
+	while (pixel_1st.x != pixel_end.x)
 	{
-		mlx_pixel_put(mlx_ptr, win_ptr, pixel_Start.x, pixel_Start.y, pixel_Start.color);
-		error = error + deltaerr;
-		while (2 * error >= deltax)
+		mlx_pixel_put(mlx_ptr, win_ptr, pixel_1st.x, pixel_1st.y, color_from_arr_to_int(color));
+		color = color_plus_delta_color(color, delta_color);
+		error = error + delta_err;
+		while (2 * error >= delta_x)
 		{
-			pixel_Start.y = pixel_Start.y + diry;
-			error = error - deltax;
-			if (2 * error >= deltax)
-				mlx_pixel_put(mlx_ptr, win_ptr, pixel_Start.x, pixel_Start.y, pixel_Start.color);
+			pixel_1st.y < pixel_end.y ? pixel_1st.y++ : pixel_1st.y--;
+			error = error - delta_x;
+			if (2 * error >= delta_x)
+			{
+				mlx_pixel_put(mlx_ptr, win_ptr, pixel_1st.x, pixel_1st.y, color_from_arr_to_int(color));
+				color = color_plus_delta_color(color, delta_color);
+			}
 		}
-		pixel_Start.x < pixel_End.x ? pixel_Start.x++ : pixel_Start.x--;
+		pixel_1st.x < pixel_end.x ? pixel_1st.x++ : pixel_1st.x--;
 	}
-	while (pixel_Start.y != pixel_End.y)
+	while (pixel_1st.y != pixel_end.y)
 	{
-		mlx_pixel_put(mlx_ptr, win_ptr, pixel_Start.x, pixel_Start.y, pixel_Start.color);
-		pixel_Start.y += diry;
+		mlx_pixel_put(mlx_ptr, win_ptr, pixel_1st.x, pixel_1st.y, color_from_arr_to_int(color));
+		color = color_plus_delta_color(color, delta_color);
+		pixel_1st.y < pixel_end.y ? pixel_1st.y++ : pixel_1st.y--;
 	}
+	free(color);
+	free(delta_color);
 }
