@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_from_int_to_arr.c                            :+:      :+:    :+:   */
+/*   init_start_values.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 23:00:42 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/18 03:41:05 by epainter         ###   ########.fr       */
+/*   Created: 2019/11/18 05:42:49 by epainter          #+#    #+#             */
+/*   Updated: 2019/11/18 05:50:26 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include <fdf.h>
 
-double		*color_from_int_to_arr(uint32_t src_color)
+int	init_start_values(int *delta_x, int *delta_err,\
+	t_pixel pxl_1st, t_pixel pxl_end)
 {
-	double	*res;
-
-	res = (double*)malloc(sizeof(double) * 4);
-	res[3] = (double)(src_color & (uint32_t)0xff);
-	res[2] = (double)((src_color & (uint32_t)0xff00) >> (uint32_t)8);
-	res[1] = (double)((src_color & (uint32_t)0xff0000) >> (uint32_t)16);
-	res[0] = (double)((src_color & (uint32_t)0xff000000) >> (uint32_t)24);
-	return (res);
+	*delta_x = ft_abs((int)pxl_end.x - (int)pxl_1st.x);
+	*delta_err = ft_abs((int)pxl_end.y - (int)pxl_1st.y);
+	return (0);
 }

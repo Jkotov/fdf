@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/17 23:33:24 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/18 04:17:24 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main(void)
 
 	pixel_start.x = WIN_SIZE_X / 2;
 	pixel_start.y = WIN_SIZE_Y / 2;
-	pixel_start.color = 0x00ff0000;
-	pixel_end.color = 0x000000ff;
+	pixel_start.color = 0x00008000;
+	pixel_end.color = 0x008b4513;
 	pixel_end.x = 0;
 	pixel_end.y = 0;
 	mlx_ptr = mlx_init();

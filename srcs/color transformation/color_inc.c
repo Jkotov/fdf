@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_from_int_to_arr.c                            :+:      :+:    :+:   */
+/*   color_inc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 23:00:42 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/18 03:41:05 by epainter         ###   ########.fr       */
+/*   Created: 2019/11/18 03:52:10 by epainter          #+#    #+#             */
+/*   Updated: 2019/11/18 05:51:38 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-double		*color_from_int_to_arr(uint32_t src_color)
+int	color_inc(double **color, double const *delta)
 {
-	double	*res;
+	int res;
 
-	res = (double*)malloc(sizeof(double) * 4);
-	res[3] = (double)(src_color & (uint32_t)0xff);
-	res[2] = (double)((src_color & (uint32_t)0xff00) >> (uint32_t)8);
-	res[1] = (double)((src_color & (uint32_t)0xff0000) >> (uint32_t)16);
-	res[0] = (double)((src_color & (uint32_t)0xff000000) >> (uint32_t)24);
+	res = color_from_arr_to_int(*color);
+	*color = color_plus_delta_color(*color, delta);
 	return (res);
 }

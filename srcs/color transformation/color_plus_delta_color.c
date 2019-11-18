@@ -18,6 +18,5 @@ double	*color_plus_delta_color(double *color, double const *delta)
 	color[1] += delta[1];
 	color[2] += delta[2];
 	color[3] += delta[3];
-
 	return (color);
 }
