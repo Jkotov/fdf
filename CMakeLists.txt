@@ -5,7 +5,13 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(minilibx_macos srcs libft)
 
-add_library(libmlx STATIC minilibx_macos/mlx_shaders.c minilibx_macos/mlx_new_window.m minilibx_macos/mlx_init_loop.m minilibx_macos/mlx_new_image.m minilibx_macos/mlx_xpm.c minilibx_macos/mlx_int_str_to_wordtab.c)
+add_library(libmlx STATIC
+        minilibx_macos/mlx_shaders.c
+        minilibx_macos/mlx_new_window.m
+        minilibx_macos/mlx_init_loop.m
+        minilibx_macos/mlx_new_image.m
+        minilibx_macos/mlx_xpm.c
+        minilibx_macos/mlx_int_str_to_wordtab.c)
 add_library(libft STATIC
         libft/ft_atoi.c
         libft/ft_bzero.c
@@ -66,7 +72,7 @@ add_library(libft STATIC
         libft/ft_strtrim.c
         libft/ft_tolower.c
         libft/ft_toupper.c
-        libft/libft.h)
+        libft/libft.h libft/ft_atoi_base.c)
 
 add_executable(fdf
         srcs/main.c
@@ -83,6 +89,7 @@ add_executable(fdf
         "srcs/Bresenham's algorithm/init_start_values.c"
         "srcs/map scan/read_map.c"
         "srcs/map scan/map_scan.h"
-        srcs/errors/read_map_error.c "srcs/map scan/string_to_tokens.c")
+        srcs/errors/read_map_error.c
+        "srcs/map scan/string_to_tokens.c" "srcs/map scan/tokens_to_matrix.c")
 
 target_link_libraries(fdf libmlx "-framework OpenGL" "-framework AppKit" -lmlx libft)

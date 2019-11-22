@@ -22,6 +22,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_atoi_base(const char *str, int str_base);
 char				*ft_strjoinfree(char **s1, char **s2, int key);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));

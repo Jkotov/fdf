@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/22 22:55:38 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/22 23:09:21 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@
 # include <stdint.h>
 # include <stdlib.h>
 
-typedef struct s_node	t_node;
+typedef struct s_map	t_map;
 
-struct			s_node
+struct			s_map
 {
-	t_node		*right;
-	t_node		*down;
 	int			z;
 	uint32_t	color;
 };

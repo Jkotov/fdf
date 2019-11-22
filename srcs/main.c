@@ -6,14 +6,14 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/22 22:55:38 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 00:36:41 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include "fdf.h"
 #include <stdio.h>
-
+#include "libft.h"
 int main(int argc, char** argv)
 {
 	void *mlx_ptr;
