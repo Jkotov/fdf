@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/18 05:48:51 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/22 22:55:38 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@
 # include <math.h>
 # include <stdint.h>
 # include <stdlib.h>
+
+typedef struct s_node	t_node;
+
+struct			s_node
+{
+	t_node		*right;
+	t_node		*down;
+	int			z;
+	uint32_t	color;
+};
 
 typedef	struct	s_pixel
 {
@@ -41,4 +51,7 @@ void			vert_line(t_pixel pixel_1st, t_pixel pixel_end,\
 	void *mlx_ptr, void *win_ptr);
 int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
+void			read_map_error(void);
+char			*read_map(char const *file_name);
+char			***string_to_tokens(char *s);
 #endif
