@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:49:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/22 23:09:50 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 07:46:25 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	***string_to_tokens(char *s)
 	len = 0;
 	while (strings[len])
 		len++;
-	tokens = (char***)malloc(sizeof(char**) * len);
+	tokens = (char***)malloc(sizeof(char**) * (len + 1));
 	tokens[len] = NULL;
 	while (--len >= 0)
 	{
