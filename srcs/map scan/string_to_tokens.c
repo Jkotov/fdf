@@ -32,5 +32,6 @@ char	***string_to_tokens(char *s)
 		strings[len] = NULL;
 	}
 	free(strings);
+	free(s);
 	return (tokens);
 }
