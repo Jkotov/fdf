@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 08:44:31 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 16:44:01 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		free(tokens[i[0]]);
 		while (++i[1] <= imax[1])
 			matrix[i[0]][i[1]].is_exist = 0;
-		matrix[i[0]][imax[1]].is_exist = 0;
 	}
 	free_token_and_imax(tokens, imax, &matrix[i[0]]);
 	return (matrix);
