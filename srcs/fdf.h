@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/22 23:09:21 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 02:37:02 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,13 @@
 # include <stdint.h>
 # include <stdlib.h>
 
-typedef struct s_map	t_map;
-
-struct			s_map
-{
-	int			z;
-	uint32_t	color;
-};
-
 typedef	struct	s_pixel
 {
 	uint32_t	x;
 	uint32_t	y;
 	uint32_t	color;
+	int			z;
+	char		is_exist;
 }				t_pixel;
 
 void			line(t_pixel pxl_start, t_pixel pxl_end,\
@@ -50,6 +44,5 @@ void			vert_line(t_pixel pixel_1st, t_pixel pixel_end,\
 int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
 void			read_map_error(void);
-char			*read_map(char const *file_name);
-char			***string_to_tokens(char *s);
+t_pixel			**map_scan(char const *file_name);
 #endif

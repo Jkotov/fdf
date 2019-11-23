@@ -20,12 +20,11 @@ int main(int argc, char** argv)
 	void *window_ptr;
 	t_pixel pixel_start;
 	t_pixel pixel_end;
-	char	*tmp;
+	t_pixel	**map;
 
 	if (argc != 2)
 		read_map_error();
-	tmp = read_map(argv[1]);
-	char ***tokens = string_to_tokens(tmp);
+	map = map_scan(argv[1]);
 	pixel_start.x = WIN_SIZE_X / 2;
 	pixel_start.y = WIN_SIZE_Y / 2;
 	pixel_start.color = 0x008b00ff;
