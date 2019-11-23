@@ -74,6 +74,9 @@ add_library(libft STATIC
         libft/ft_toupper.c
         libft/libft.h libft/ft_atoi_base.c)
 
+
+add_compile_options (-Wall -Werror -Wextra -g)
+
 add_executable(fdf
         srcs/main.c
         srcs/fdf.h

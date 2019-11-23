@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 07:56:29 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 08:44:31 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static	t_pixel	pxl_params(char *token, int x, int y)
 
 static	void	free_token_and_imax(char ***tokens, int *imax, t_pixel **matrix)
 {
-	//*matrix = NULL;
+	*matrix = NULL;
 	free(tokens);
 	free(imax);
 }

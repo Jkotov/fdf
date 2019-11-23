@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 18:36:26 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/22 23:08:14 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 11:10:26 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ char	*read_map(char const *file_name)
 	char	*s;
 	char	*buf;
 
-	buf = (char*)malloc(sizeof(char) * BUFFSIZE);
+	buf = (char*)malloc(sizeof(char) * (BUFFSIZE + 1));
 	fd = open(file_name, O_RDONLY);
 	s = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFFSIZE)) > 0)
 	{
-		buf[ret] = '\0';
+		ft_bzero((buf + ret), BUFFSIZE - ret + 1);
 		s = ft_strjoinfree(&s, &buf, 1);
 		if (s == NULL)
 			read_map_error();
