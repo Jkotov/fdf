@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 04:01:55 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 05:03:17 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,31 @@ int main(int argc, char** argv)
 	pixel_end.y = WIN_SIZE_Y / 2;
 	line(pixel_start, pixel_end, mlx_ptr, window_ptr);*/
 	i = -1;
-	while (map[++i])
+	while (map[++i + 1])
 	{
 		j = -1;
-		while (map[i][++j].is_exist)
+		while (map[i][++j + 1].is_exist)
 		{
 			if (map[i][j].color == 0xff000000)
 				map[i][j].color = 0xff0000;
+			if (map[i + 1][j].color == 0xff000000)
+				map[i + 1][j].color = 0xff0000;
 			if (!map[i][j].z)
-			mlx_pixel_put(mlx_ptr, window_ptr, SIZE * map[i][j].x, (SIZE * map[i][j].y - map[i][j].z), map[i][j].color);
+			{
+				map[i][j].x *= SIZE;
+				map[i][j].y *= SIZE;
+				map[i][j].z *= SIZE;
+				map[i + 1][j].x *= SIZE;
+				map[i + 1][j].y *= SIZE;
+				map[i + 1][j].z *= SIZE;
+				line(map[i][j], map[i + 1][j], mlx_ptr, window_ptr);
+				map[i][j].x /= SIZE;
+				map[i][j].y /= SIZE;
+				map[i][j].z /= SIZE;
+				map[i + 1][j].x /= SIZE;
+				map[i + 1][j].y /= SIZE;
+				map[i + 1][j].z /= SIZE;
+			}
 		}
 	}
 	mlx_pixel_put(mlx_ptr, window_ptr, 1, 1, 0xffff);
