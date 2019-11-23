@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 03:00:55 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 03:35:10 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,16 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		read_map_error();
 	while (++i[0] < imax[0])
 	{
-		if ((matrix[i[0]] = (t_pixel *)malloc(sizeof(t_pixel) * imax[1]))\
+		if ((matrix[i[0]] = (t_pixel *)malloc(sizeof(t_pixel) * imax[1]))
 		== NULL)
 			read_map_error();
 		i[1] = -1;
 		while (++i[1] <= imax[1] && tokens[i[0]][i[1]])
 		{
 			matrix[i[0]][i[1]] = set_pixel_params\
-			(tokens[i[0]][i[1]], i[0], i[1]);
+			(tokens[i[0]][i[1]], i[1], i[0]);
 			free(tokens[i[0]][i[1]]);
+			tokens[i[0]][i[1]] = NULL;
 		}
 		while (++i[1] <= imax[1])
 			matrix[i[0]][i[1]].is_exist = 0;
