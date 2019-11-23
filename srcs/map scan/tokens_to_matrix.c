@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 03:35:10 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/23 03:46:32 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		i[1] = -1;
 		while (++i[1] <= imax[1] && tokens[i[0]][i[1]])
 		{
-			matrix[i[0]][i[1]] = set_pixel_params\
-			(tokens[i[0]][i[1]], i[1], i[0]);
+			matrix[i[0]][i[1]] = set_pixel_params(tokens[i[0]][i[1]],\
+			i[1], i[0]);
 			free(tokens[i[0]][i[1]]);
 			tokens[i[0]][i[1]] = NULL;
 		}
