@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 07:49:15 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/24 14:19:32 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,13 @@ int main(int argc, char** argv)
 	while (map[++i + 1])
 	{
 		j = -1;
-		while (map[i][++j + 1].is_exist && map[i][j].is_exist)
+		while (map[i][++j + 1].is_exist == 1 && map[i][j].is_exist == 1)
 		{
 			if (map[i][j].color == 0xff0000)
 				map[i][j].color = 0x0000ff;
 			if (map[i + 1][j].color == 0xff000000)
 				map[i + 1][j].color = 0xff0000;
-			if (!map[i][j].z)
-			{
-				if (!map[i + 1][j].z && map[i + 1][j].is_exist == 1)
+				if (map[i + 1][j].is_exist == 1)
 				{
 					map[i][j].x *= SIZE;
 					map[i][j].y *= SIZE;
@@ -80,7 +78,6 @@ int main(int argc, char** argv)
 					map[i + 1][j].x /= SIZE;
 					map[i + 1][j].y /= SIZE;
 					map[i + 1][j].z /= SIZE;
-				}
 				if (!map[i][j + 1].z && map[i][j + 1].is_exist == 1)
 				{
 				map[i][j].x *= SIZE;
