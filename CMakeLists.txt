@@ -93,6 +93,6 @@ add_executable(fdf
         "srcs/map scan/read_map.c"
         "srcs/map scan/map_scan.h"
         srcs/errors/read_map_error.c
-        "srcs/map scan/string_to_tokens.c" "srcs/map scan/tokens_to_matrix.c" "srcs/map scan/map_scan.c")
+        "srcs/map scan/string_to_tokens.c" "srcs/map scan/tokens_to_matrix.c" "srcs/map scan/map_scan.c" srcs/matrix_trasformations/resize.c)
 
 target_link_libraries(fdf libmlx "-framework OpenGL" "-framework AppKit" -lmlx libft)

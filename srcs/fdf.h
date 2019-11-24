@@ -29,6 +29,7 @@ typedef	struct	s_pixel
 	char		is_exist;
 }				t_pixel;
 
+t_pixel			resize(t_pixel pixel, uint32_t size);
 void			line(t_pixel pxl_start, t_pixel pxl_end,\
 	void *mlx_ptr, void *win_ptr);
 int				ft_abs(int n);

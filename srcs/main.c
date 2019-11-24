@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/24 14:19:32 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/24 14:19:48 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,34 +65,10 @@ int main(int argc, char** argv)
 				map[i + 1][j].color = 0xff0000;
 				if (map[i + 1][j].is_exist == 1)
 				{
-					map[i][j].x *= SIZE;
-					map[i][j].y *= SIZE;
-					map[i][j].z *= SIZE;
-					map[i + 1][j].x *= SIZE;
-					map[i + 1][j].y *= SIZE;
-					map[i + 1][j].z *= SIZE;
-					line(map[i][j], map[i + 1][j], mlx_ptr, window_ptr);
-					map[i][j].x /= SIZE;
-					map[i][j].y /= SIZE;
-					map[i][j].z /= SIZE;
-					map[i + 1][j].x /= SIZE;
-					map[i + 1][j].y /= SIZE;
-					map[i + 1][j].z /= SIZE;
+					line(resize(map[i][j], SIZE), resize(map[i + 1][j], SIZE), mlx_ptr, window_ptr);
 				if (!map[i][j + 1].z && map[i][j + 1].is_exist == 1)
 				{
-				map[i][j].x *= SIZE;
-				map[i][j].y *= SIZE;
-				map[i][j].z *= SIZE;
-				map[i][j + 1].x *= SIZE;
-				map[i][j + 1].y *= SIZE;
-				map[i][j + 1].z *= SIZE;
-				line(map[i][j], map[i][j + 1], mlx_ptr, window_ptr);
-				map[i][j].x /= SIZE;
-				map[i][j].y /= SIZE;
-				map[i][j].z /= SIZE;
-				map[i][j + 1].x /= SIZE;
-				map[i][j + 1].y /= SIZE;
-				map[i][j + 1].z /= SIZE;
+					line(resize(map[i][j], SIZE), resize(map[i][j + 1], SIZE), mlx_ptr, window_ptr);
 				}
 			}
 		}
