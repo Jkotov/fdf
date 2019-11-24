@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 02:56:41 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/24 17:55:28 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ typedef	struct	s_pixel
 	char		is_exist;
 }				t_pixel;
 
+typedef	struct	s_trasform_params
+{
+	uint32_t	size;
+	t_pixel		shift;
+	double		angle_x;
+	double		angle_y;
+	double		angle_z;
+}				t_trasform_params;
+
+t_pixel			rotate_around_x(t_pixel pixel, double angle);
+t_pixel			rotate_around_y(t_pixel pixel, double angle);
+t_pixel			rotate_around_z(t_pixel pixel, double angle);
+t_pixel			all_trasforms(t_pixel pixel, t_trasform_params params);
+t_pixel			move(t_pixel pixel, t_pixel shift);
 t_pixel			resize(t_pixel pixel, uint32_t size);
 void			line(t_pixel pxl_start, t_pixel pxl_end,\
 	void *mlx_ptr, void *win_ptr);

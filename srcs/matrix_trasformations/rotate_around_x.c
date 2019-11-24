@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   rotate_around_x.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/24 14:42:10 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/24 14:52:48 by epainter         ###   ########.fr       */
+/*   Created: 2019/11/24 18:02:37 by epainter          #+#    #+#             */
+/*   Updated: 2019/11/24 18:20:07 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include <math.h>
 
-t_pixel	move(t_pixel pixel, t_pixel shift)
+t_pixel rotate_around_x(t_pixel pixel, double angle)
 {
-	pixel.x += shift.x;
-	pixel.y += shift.y;
-	pixel.z += shift.z;
+	double tmp_y;
+
+	tmp_y = (double)pixel.y;
+	pixel.y = (uint32_t)(tmp_y * cos(angle) - (double)pixel.z * sin(angle));
+	pixel.z = (uint32_t)(tmp_y * sin(angle) + (double)pixel.z * cos(angle));
 	return (pixel);
 }
