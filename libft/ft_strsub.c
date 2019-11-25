@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 17:16:49 by epainter          #+#    #+#             */
-/*   Updated: 2019/09/15 18:40:46 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 10:19:33 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char *res;
 
+	if (s == NULL)
+		return (NULL);
 	res = ft_strnew(len);
-	if (res == NULL || s == NULL)
+	if (res == NULL)
 		return (NULL);
 	if (len == 0)
 		return (res);

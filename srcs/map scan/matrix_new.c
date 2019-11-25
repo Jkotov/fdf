@@ -19,13 +19,13 @@ t_pixel	**matrix_new(int x, int y)
 	t_pixel	**matrix;
 
 	i = 0;
-	matrix = malloc(sizeof(t_pixel*) * y);
+	matrix = (t_pixel**)malloc(sizeof(t_pixel*) * y);
 	if (matrix == NULL)
 		read_map_error();
 	ft_bzero(matrix, y * sizeof(t_pixel*));
 	while (y + 1 != 0)
 	{
-		matrix[y] = malloc(sizeof(t_pixel) * x);
+		matrix[y] = (t_pixel*)malloc(sizeof(t_pixel) * x);
 		if (matrix[y] == NULL)
 			read_map_error();
 		ft_bzero(matrix[y], sizeof(t_pixel) * x);

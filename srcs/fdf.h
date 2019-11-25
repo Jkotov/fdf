@@ -13,8 +13,8 @@
 #ifndef FDF_H
 # define FDF_H
 
-# define WIN_SIZE_X 1366
-# define WIN_SIZE_Y 768
+# define WIN_SIZE_X 1920
+# define WIN_SIZE_Y 1080
 # include "mlx.h"
 # include <math.h>
 # include <stdint.h>

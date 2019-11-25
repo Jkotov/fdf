@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 04:18:49 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:47:08 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "fdf.h"
 #include <stdio.h>
 #include "libft.h"
-#define SIZE 20
-#define SHIFTX 600
+#define SIZE 10
+#define SHIFTX 0
 #define SHIFTY 300
 #define SHIFTZ 0
 #define ANGLEX 10
@@ -39,8 +39,8 @@ int main(int argc, char** argv)
 	params.shift.y = SHIFTY;
 	params.shift.z = SHIFTZ;
 	params.size = SIZE;
-	params.angle_x = 70;
-	params.angle_y = 50;
+	params.angle_x = M_PI / 3;
+	params.angle_y = M_PI / 6;
 	params.angle_z = 0;
 	while (map[++i + 1])
 	{
@@ -63,5 +63,5 @@ int main(int argc, char** argv)
 	}
 	mlx_pixel_put(mlx_ptr, window_ptr, 1, 1, 0xffff);
 	mlx_loop(mlx_ptr);
-	getchar();
+getchar();
 }

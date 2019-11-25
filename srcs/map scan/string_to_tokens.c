@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:49:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 07:46:25 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:42:39 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	***string_to_tokens(char *s)
 		free(strings[len]);
 		strings[len] = NULL;
 	}
-	free(strings);
+	//free(strings);
 	free(s);
 	return (tokens);
 }
