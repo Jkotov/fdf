@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/24 17:55:28 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 04:20:21 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 typedef	struct	s_pixel
 {
-	uint32_t	x;
-	uint32_t	y;
+	int			x;
+	int			y;
 	uint32_t	color;
 	int			z;
 	char		is_exist;
@@ -38,6 +38,7 @@ typedef	struct	s_trasform_params
 	double		angle_z;
 }				t_trasform_params;
 
+t_pixel			**matrix_new(int x, int y);
 t_pixel			rotate_around_x(t_pixel pixel, double angle);
 t_pixel			rotate_around_y(t_pixel pixel, double angle);
 t_pixel			rotate_around_z(t_pixel pixel, double angle);

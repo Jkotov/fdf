@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 16:44:01 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 04:17:42 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 
 	i[0] = -1;
 	imax = len_of_rows(tokens);
-	if (((matrix = (t_pixel**)malloc(sizeof(t_pixel) * imax[0])) == NULL))
-		read_map_error();
+	matrix = matrix_new(imax[1], imax[0]);
 	while (++i[0] < imax[0])
 	{
 		if ((matrix[i[0]] = (t_pixel *)malloc(sizeof(t_pixel) *\

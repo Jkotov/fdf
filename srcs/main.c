@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 01:22:12 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 04:18:49 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <stdio.h>
 #include "libft.h"
 #define SIZE 20
-#define SHIFTX 10
-#define SHIFTY 15
+#define SHIFTX 600
+#define SHIFTY 300
 #define SHIFTZ 0
 #define ANGLEX 10
 
@@ -40,7 +40,7 @@ int main(int argc, char** argv)
 	params.shift.z = SHIFTZ;
 	params.size = SIZE;
 	params.angle_x = 70;
-	params.angle_y = 0;
+	params.angle_y = 50;
 	params.angle_z = 0;
 	while (map[++i + 1])
 	{
@@ -51,14 +51,14 @@ int main(int argc, char** argv)
 				map[i][j].color = 0x0000ff;
 			if (map[i + 1][j].color == 0xff000000)
 				map[i + 1][j].color = 0xff0000;
-				if (map[i + 1][j].is_exist == 1)
+			if (map[i + 1][j].is_exist == 1 && (all_trasforms(map[i][j], params).x <= WIN_SIZE_X && all_trasforms(map[i + 1][j], params).y <= WIN_SIZE_Y))
 				{
 					line(all_trasforms(map[i][j], params), all_trasforms(map[i + 1][j], params), mlx_ptr, window_ptr);
-				if (!map[i][j + 1].z && map[i][j + 1].is_exist == 1)
-				{
-					line(all_trasforms(map[i][j], params), all_trasforms(map[i][j + 1], params), mlx_ptr, window_ptr);
+					if (!map[i][j + 1].z && map[i][j + 1].is_exist == 1)
+						{
+							line(all_trasforms(map[i][j], params), all_trasforms(map[i][j + 1], params), mlx_ptr, window_ptr);
+						}
 				}
-			}
 		}
 	}
 	mlx_pixel_put(mlx_ptr, window_ptr, 1, 1, 0xffff);
