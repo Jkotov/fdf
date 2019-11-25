@@ -15,11 +15,9 @@
 t_pixel	**map_scan(char const *file_name)
 {
 	char	*str;
-	char	***tokens;
 	t_pixel	**res;
 
 	str = read_map(file_name);
-	tokens = string_to_tokens(str);
-	res = tokens_to_matrix(tokens);
+	res = string_to_tokens(str);
 	return (res);
 }

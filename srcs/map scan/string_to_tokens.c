@@ -6,18 +6,19 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:49:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 15:42:39 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:44:35 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_scan.h"
 #include "libft.h"
 
-char	***string_to_tokens(char *s)
+t_pixel		**string_to_tokens(char *s)
 {
 	char	**strings;
 	char	***tokens;
 	int		len;
+	t_pixel	**matrix;
 
 	strings = ft_strsplit(s, '\n');
 	len = 0;
@@ -31,7 +32,8 @@ char	***string_to_tokens(char *s)
 		free(strings[len]);
 		strings[len] = NULL;
 	}
-	//free(strings);
+	matrix = tokens_to_matrix(tokens);
+	free(strings);
 	free(s);
-	return (tokens);
+	return (matrix);
 }
