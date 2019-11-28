@@ -24,7 +24,7 @@ int		ft_atoi_base(const char *str, int str_base)
 	flag = 1;
 	while (ft_strchr(" \n\t\v\f\r", *str) && *str)
 		str++;
-	if (*str == '-' && !ft_strchr(digits,ft_tolower(*(str + 1))))
+	if (*str == '-' && !ft_strchr(digits, ft_tolower(*(str + 1))))
 		return (0);
 	if (*str == '-')
 		flag = -1;

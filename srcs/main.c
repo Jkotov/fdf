@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 15:47:08 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/28 20:11:36 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "fdf.h"
 #include <stdio.h>
 #include "libft.h"
-#define SIZE 10
-#define SHIFTX 0
-#define SHIFTY 300
+#define SIZE 5
+#define SHIFTX 200
+#define SHIFTY 200
 #define SHIFTZ 0
 #define ANGLEX 10
 
@@ -40,8 +40,8 @@ int main(int argc, char** argv)
 	params.shift.z = SHIFTZ;
 	params.size = SIZE;
 	params.angle_x = M_PI / 3;
-	params.angle_y = M_PI / 6;
-	params.angle_z = 0;
+	params.angle_y = 0;
+	params.angle_z = M_PI / 6;
 	while (map[++i + 1])
 	{
 		j = -1;

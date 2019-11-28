@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 16:05:48 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/28 20:08:20 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static	int		*len_of_rows(char ***tokens)
 	int		i[2];
 	int		*imax;
 
-	imax = (int*)malloc(sizeof(int) * 2);
+	if (!(imax = (int*)malloc(sizeof(int) * 2)))
+		read_map_error();
 	i[0] = 0;
 	imax[1] = 0;
 	while (tokens[i[0]])
@@ -47,7 +48,7 @@ static	t_pixel	pxl_params(char *token, int x, int y)
 	return (res);
 }
 
-static	void	free_token_and_imax(char ***tokens, int *imax, t_pixel **matrix)
+static	void	free_token_and_imax(char ***tokens, int *imax)
 {
 	int i;
 	int j;
@@ -72,7 +73,6 @@ static	void	free_token_and_imax(char ***tokens, int *imax, t_pixel **matrix)
 		i++;
 	}
 	free(tokens);
-	*matrix = NULL;
 	free(imax);
 }
 
@@ -93,6 +93,6 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		while (++i[1] <= imax[1])
 			matrix[i[0]][i[1]].is_exist = 0;
 	}
-	free_token_and_imax(tokens, imax, &matrix[i[0]]);
+	free_token_and_imax(tokens, imax);
 	return (matrix);
 }

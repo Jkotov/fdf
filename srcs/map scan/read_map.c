@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 18:36:26 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/23 11:10:26 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/28 20:18:37 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-#define BUFFSIZE 4096
+#define BUFFSIZE 1024
 
 char	*read_map(char const *file_name)
 {
@@ -27,7 +27,8 @@ char	*read_map(char const *file_name)
 	char	*s;
 	char	*buf;
 
-	buf = (char*)malloc(sizeof(char) * (BUFFSIZE + 1));
+	if (!(buf = (char*)malloc(sizeof(char) * (BUFFSIZE + 1))))
+		read_map_error();
 	fd = open(file_name, O_RDONLY);
 	s = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFFSIZE)) > 0)

@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:49:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 15:44:35 by epainter         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:57:26 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ t_pixel		**string_to_tokens(char *s)
 	len = 0;
 	while (strings[len])
 		len++;
-	tokens = (char***)malloc(sizeof(char**) * (len + 1));
+	if (!(tokens = (char***)malloc(sizeof(char**) * (len + 1))))
+		read_map_error();
 	tokens[len] = NULL;
 	while (--len >= 0)
 	{
