@@ -12,6 +12,7 @@ add_library(libmlx STATIC
         minilibx_macos/mlx_new_image.m
         minilibx_macos/mlx_xpm.c
         minilibx_macos/mlx_int_str_to_wordtab.c)
+
 add_library(libft STATIC
         libft/ft_atoi.c
         libft/ft_bzero.c
@@ -72,8 +73,8 @@ add_library(libft STATIC
         libft/ft_strtrim.c
         libft/ft_tolower.c
         libft/ft_toupper.c
-        libft/libft.h libft/ft_atoi_base.c)
-
+        libft/libft.h
+        libft/ft_atoi_base.c)
 
 add_compile_options (-Wall -Werror -Wextra -g)
 
@@ -93,6 +94,15 @@ add_executable(fdf
         "srcs/map scan/read_map.c"
         "srcs/map scan/map_scan.h"
         srcs/errors/read_map_error.c
-        "srcs/map scan/string_to_tokens.c" "srcs/map scan/tokens_to_matrix.c" "srcs/map scan/map_scan.c" srcs/matrix_trasformations/resize.c srcs/matrix_trasformations/move.c srcs/matrix_trasformations/all_trasforms.c srcs/matrix_trasformations/rotate_around_x.c srcs/matrix_trasformations/rotate_around_y.c srcs/matrix_trasformations/rotate_around_z.c "srcs/map scan/matrix_new.c")
+        "srcs/map scan/string_to_tokens.c"
+        "srcs/map scan/tokens_to_matrix.c" "srcs/map scan/map_scan.c"
+        srcs/matrix_trasformations/resize.c
+        srcs/matrix_trasformations/move.c
+        srcs/matrix_trasformations/all_trasforms.c
+        srcs/matrix_trasformations/rotate_around_x.c
+        srcs/matrix_trasformations/rotate_around_y.c
+        srcs/matrix_trasformations/rotate_around_z.c
+        "srcs/map scan/matrix_new.c"
+        srcs/control/push_key.c)
 
-target_link_libraries(fdf libmlx "-framework OpenGL" "-framework AppKit" -lmlx libft)
+target_link_libraries(fdf libmlx "-framework OpenGL" "-framework AppKit"  libft)

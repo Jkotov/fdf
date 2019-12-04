@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/11/25 04:20:21 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/04 21:20:47 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include <math.h>
 # include <stdint.h>
 # include <stdlib.h>
+#define SIZE 30
+#define SHIFTX 200
+#define SHIFTY 200
+#define SHIFTZ 0
+#define ANGLEX 10
 
 typedef	struct	s_pixel
 {
@@ -31,13 +36,19 @@ typedef	struct	s_pixel
 
 typedef	struct	s_trasform_params
 {
+	t_pixel		**map;
 	uint32_t	size;
 	t_pixel		shift;
 	double		angle_x;
 	double		angle_y;
 	double		angle_z;
+	void 		*window;
+	void		*mlx;
 }				t_trasform_params;
 
+void			draw(t_trasform_params params);
+void			print_menu(t_trasform_params p);
+int 			push_key(int key, void *param);
 t_pixel			**matrix_new(int x, int y);
 t_pixel			rotate_around_x(t_pixel pixel, double angle);
 t_pixel			rotate_around_y(t_pixel pixel, double angle);
