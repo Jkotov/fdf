@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_control.c                                     :+:      :+:    :+:   */
+/*   push_mouse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/05 13:44:04 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/05 14:02:33 by mdirect          ###   ########.fr       */
+/*   Created: 2019/12/05 13:50:15 by mdirect           #+#    #+#             */
+/*   Updated: 2019/12/05 14:03:54 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "control.h"
 
-void	push_control(t_trasform_params *p)
+int			push_mouse(int key, void *param)
 {
-	mlx_hook(p->window, 2, 0, push_key, p);
-//	mlx_hook(p->window, 4, 0, push_mouse, p);
+	t_trasform_params *p;
+
+	p = (t_trasform_params *)param;
+//	if (key == 4 || key == 5)
+//		keyboard_zoom(key, p);
+	key = 4;
+	return (0);
 }
