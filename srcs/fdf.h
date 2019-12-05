@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 13:46:32 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/05 15:08:35 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef	struct	s_trasform_params
 	double		angle_z;
 	void 		*window;
 	void		*mlx;
+	void		*img;
+	int			*img_data;
 }				t_trasform_params;
 
 void			draw(t_trasform_params params);
@@ -56,8 +58,7 @@ t_pixel			rotate_around_z(t_pixel pixel, double angle);
 t_pixel			all_trasforms(t_pixel pixel, t_trasform_params params);
 t_pixel			move(t_pixel pixel, t_pixel shift);
 t_pixel			resize(t_pixel pixel, uint32_t size);
-void			line(t_pixel pxl_start, t_pixel pxl_end,\
-	void *mlx_ptr, void *win_ptr);
+void			line(t_pixel pxl_start, t_pixel pxl_end, int *img_data);
 int				ft_abs(int n);
 double			percentage(double start, double end, double cur);
 uint32_t		color_from_arr_to_int(double const *src_color);
@@ -67,7 +68,7 @@ double			*color_plus_delta_color(double *color, double const *delta);
 int				color_inc(double **color, double const *delta);
 void			free_color_and_delta(double *color, double *delta);
 void			vert_line(t_pixel pixel_1st, t_pixel pixel_end,\
-	void *mlx_ptr, void *win_ptr);
+	int *img_data);
 int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
 void			read_map_error(void);
