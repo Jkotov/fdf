@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 15:08:35 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/05 15:53:34 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <math.h>
 # include <stdint.h>
 # include <stdlib.h>
-#define SIZE 30
-#define SHIFTX 200
-#define SHIFTY 200
-#define SHIFTZ 0
-#define ANGLEX 10
+# define SIZE 30
+# define SHIFTX 200
+# define SHIFTY 200
+# define SHIFTZ 0
+# define ANGLEX 10
 
 typedef	struct	s_pixel
 {
@@ -42,7 +42,7 @@ typedef	struct	s_trasform_params
 	double		angle_x;
 	double		angle_y;
 	double		angle_z;
-	void 		*window;
+	void		*window;
 	void		*mlx;
 	void		*img;
 	int			*img_data;
@@ -50,7 +50,7 @@ typedef	struct	s_trasform_params
 
 void			draw(t_trasform_params params);
 void			print_menu(t_trasform_params p);
-void 			push_control(t_trasform_params *p);
+void			push_control(t_trasform_params *p);
 t_pixel			**matrix_new(int x, int y);
 t_pixel			rotate_around_x(t_pixel pixel, double angle);
 t_pixel			rotate_around_y(t_pixel pixel, double angle);
@@ -69,6 +69,8 @@ int				color_inc(double **color, double const *delta);
 void			free_color_and_delta(double *color, double *delta);
 void			vert_line(t_pixel pixel_1st, t_pixel pixel_end,\
 	int *img_data);
+void			put_pixel(t_pixel pixel, int **img_data,\
+	double **color, double *d_color);
 int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
 void			read_map_error(void);

@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 15:16:59 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/05 15:19:57 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		main(int argc, char **argv)
 	params.img = mlx_new_image(params.mlx, WIN_SIZE_X, WIN_SIZE_Y);
 	params.img_data = (int*)mlx_get_data_addr(params.img, &bit_depth, &line, &endian);
 	mlx_put_image_to_window(params.mlx, params.window, params.img, 0, 0);
-	//draw(params);
+	draw(params);
 	print_menu(params);
 	push_control(&params);
 	//mlx_pixel_put(params.mlx, params.window, 1, 1, 0xffff);

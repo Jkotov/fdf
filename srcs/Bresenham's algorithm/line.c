@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 16:13:58 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 15:08:35 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/05 15:47:51 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void		line(t_pixel pxl_1st, t_pixel pxl_end, int *img_data)
 	error = init_start_values(&delta_x, &delta_err, pxl_1st, pxl_end);
 	while (pxl_1st.x != pxl_end.x)
 	{
-		img_data[pxl_1st.y * WIN_SIZE_X + pxl_1st.x] = color_inc(&color, d_color);
+		put_pixel(pxl_1st, &img_data, &color, d_color);
 		error = error + delta_err;
 		while (2 * error >= delta_x)
 		{
 			pxl_1st.y < pxl_end.y ? pxl_1st.y++ : pxl_1st.y--;
 			if (2 * (error -= delta_x) >= delta_x)
-				img_data[pxl_1st.y * WIN_SIZE_X + pxl_1st.x] = color_inc(&color, d_color);
+				put_pixel(pxl_1st, &img_data, &color, d_color);
 		}
 		pxl_1st.x < pxl_end.x ? pxl_1st.x++ : pxl_1st.x--;
 	}
