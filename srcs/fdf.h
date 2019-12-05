@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/04 21:20:47 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/05 13:46:32 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef	struct	s_trasform_params
 
 void			draw(t_trasform_params params);
 void			print_menu(t_trasform_params p);
-int 			push_key(int key, void *param);
+void 			push_control(t_trasform_params *p);
 t_pixel			**matrix_new(int x, int y);
 t_pixel			rotate_around_x(t_pixel pixel, double angle);
 t_pixel			rotate_around_y(t_pixel pixel, double angle);

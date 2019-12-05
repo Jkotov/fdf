@@ -6,15 +6,13 @@
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 13:53:29 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/04 21:20:47 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/05 13:38:08 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "control.h"
 
-#include <stdio.h>
-
-static void		keyboard_move(int key, t_trasform_params *p)
+void		keyboard_move(int key, t_trasform_params *p)
 {
 	mlx_clear_window(p->mlx, p->window);
 	if (key == 124)
@@ -41,7 +39,7 @@ static void		keyboard_move(int key, t_trasform_params *p)
 	print_menu(*p);
 }
 
-static void		keyboard_rotate(int key, t_trasform_params *p)
+void		keyboard_rotate(int key, t_trasform_params *p)
 {
 	mlx_clear_window(p->mlx, p->window);
 	if (key == 86)
@@ -60,7 +58,7 @@ static void		keyboard_rotate(int key, t_trasform_params *p)
 	print_menu(*p);
 }
 
-static void		keyboard_zoom(int key, t_trasform_params *p)
+void		keyboard_zoom(int key, t_trasform_params *p)
 {
 	mlx_clear_window(p->mlx, p->window);
 	if (key == 78)
@@ -71,7 +69,7 @@ static void		keyboard_zoom(int key, t_trasform_params *p)
 	print_menu(*p);
 }
 
-int				push_key(int key, void *param)
+int			push_key(int key, void *param)
 {
 	t_trasform_params *p;
 

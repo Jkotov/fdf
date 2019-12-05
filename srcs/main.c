@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/04 21:01:04 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/05 13:46:32 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 	params.angle_z = M_PI / 6;
 	draw(params);
 	print_menu(params);
+	push_control(&params);
 	mlx_pixel_put(params.mlx, params.window, 1, 1, 0xffff);
-	mlx_hook(params.window, 2, 0, push_key, &params);
 	mlx_loop(params.mlx);
 }
