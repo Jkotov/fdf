@@ -12,13 +12,15 @@
 
 #include "control.h"
 
-int			push_mouse(int key, void *param)
+/*int			push_mouse(int key, t_map *map, void *param)
 {
 	t_trasform_params *p;
 
 	p = (t_trasform_params *)param;
+
 //	if (key == 4 || key == 5)
 //		keyboard_zoom(key, p);
 	key = 4;
 	return (0);
 }
+*/

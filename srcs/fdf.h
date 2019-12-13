@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 15:53:34 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/13 15:03:36 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define WIN_SIZE_X 1920
 # define WIN_SIZE_Y 1080
 # include "mlx.h"
+# include "libft.h"
 # include <math.h>
 # include <stdint.h>
 # include <stdlib.h>
@@ -31,26 +32,31 @@ typedef	struct	s_pixel
 	int			y;
 	uint32_t	color;
 	int			z;
-	char		is_exist;
+	char		is_exist_next;
 }				t_pixel;
 
 typedef	struct	s_trasform_params
 {
-	t_pixel		**map;
 	uint32_t	size;
 	t_pixel		shift;
 	double		angle_x;
 	double		angle_y;
 	double		angle_z;
+}				t_trasform_params;
+
+typedef	struct	s_map
+{
+	t_pixel		**map;
 	void		*window;
 	void		*mlx;
 	void		*img;
 	int			*img_data;
-}				t_trasform_params;
 
-void			draw(t_trasform_params params);
-void			print_menu(t_trasform_params p);
-void			push_control(t_trasform_params *p);
+}				t_map;
+
+void			draw(t_map map, t_trasform_params p);
+void			print_menu(t_map p);
+void			push_control(t_map *map, t_trasform_params *p);
 t_pixel			**matrix_new(int x, int y);
 t_pixel			rotate_around_x(t_pixel pixel, double angle);
 t_pixel			rotate_around_y(t_pixel pixel, double angle);

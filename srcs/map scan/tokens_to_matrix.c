@@ -44,7 +44,7 @@ static	t_pixel	pxl_params(char *token, int x, int y)
 	res.color = 0xff000000;
 	if (ft_strchr(token, ','))
 		res.color = ft_atoi_base(ft_strchr(token, 'x') + 1, 16);
-	res.is_exist = 1;
+	res.is_exist_next = 1;
 	return (res);
 }
 
@@ -90,9 +90,9 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		i[1] = -1;
 		while ((++i[1] <= imax[1]) && tokens[i[0]][i[1]])
 			matrix[i[0]][i[1]] = pxl_params(tokens[i[0]][i[1]], i[1], i[0]);
-		while (++i[1] <= imax[1])
-			matrix[i[0]][i[1]].is_exist = 0;
+		matrix[i[0]][i[1]].is_exist_next = 0;
 	}
 	free_token_and_imax(tokens, imax);
+	matrix[i[0]] = NULL;
 	return (matrix);
 }
