@@ -17,7 +17,7 @@ t_pixel	**matrix_new(int x, int y)
 {
 	t_pixel	**matrix;
 
-	matrix = (t_pixel**)malloc(sizeof(t_pixel*) * y);
+	matrix = (t_pixel**)malloc(sizeof(t_pixel*) * (y + 1));
 	if (matrix == NULL)
 		read_map_error();
 	y--;

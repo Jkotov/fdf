@@ -90,7 +90,7 @@ t_pixel			**tokens_to_matrix(char ***tokens)
 		i[1] = -1;
 		while ((++i[1] <= imax[1]) && tokens[i[0]][i[1]])
 			matrix[i[0]][i[1]] = pxl_params(tokens[i[0]][i[1]], i[1], i[0]);
-		matrix[i[0]][i[1]].is_exist_next = 0;
+		matrix[i[0]][i[1] - 1].is_exist_next = 0;
 	}
 	free_token_and_imax(tokens, imax);
 	matrix[i[0]] = NULL;
