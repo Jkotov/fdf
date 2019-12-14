@@ -103,6 +103,6 @@ add_executable(fdf
         srcs/matrix_trasformations/rotate_around_y.c
         srcs/matrix_trasformations/rotate_around_z.c
         "srcs/map scan/matrix_new.c"
-        srcs/control/push_key.c srcs/control/control.h srcs/control/push_control.c srcs/control/push_mouse.c "srcs/Bresenham's algorithm/put_pixel.c" srcs/draw_map/draw_map.c srcs/matrix_trasformations/find_center.c)
+        srcs/control/push_key.c srcs/control/control.h srcs/control/push_control.c srcs/control/push_mouse.c "srcs/Bresenham's algorithm/put_pixel.c" srcs/draw_map/draw_map.c srcs/matrix_trasformations/find_center.c srcs/matrix_trasformations/transform_params_init.c)
 
 target_link_libraries(fdf libmlx "-framework OpenGL" "-framework AppKit"  libft)
