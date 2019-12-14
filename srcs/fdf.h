@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 16:21:56 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
 void			read_map_error(void);
 t_map			map_scan(char const *file_name);
+t_pixel			find_center(t_map map);
 #endif

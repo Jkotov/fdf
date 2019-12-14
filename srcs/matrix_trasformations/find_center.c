@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_scan.h                                         :+:      :+:    :+:   */
+/*   find_center.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/22 23:07:47 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
+/*   Created: 2019/12/14 18:55:10 by epainter          #+#    #+#             */
+/*   Updated: 2019/12/14 18:58:07 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_SCAN_H
-# define MAP_SCAN_H
+#include "fdf.h"
 
-# include "stdlib.h"
-# include "fdf.h"
+t_pixel			find_center(t_map map)
+{
+	t_pixel	pixel;
+	int		i;
 
-char	*read_map(char const *file_name);
-t_pixel	**string_to_tokens(char *s);
-t_pixel	**tokens_to_matrix(char ***tokens);
-
-#endif
+	i = 0;
+	while (map.map[i])
+		i++;
+	pixel.y = i / 2;
+	while (map.map[0][i].is_exist_next == 1)
+		i++;
+	pixel.x = i / 2;
+	pixel.z = 0;
+	return (pixel);
+}

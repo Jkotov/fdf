@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:55:33 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 16:08:42 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 t_pixel		all_trasforms(t_pixel pixel, t_trasform_params params)
 {
+	t_pixel	shift_to_center;
+
+	shift_to_center.x = -params.center.x;
+	shift_to_center.y = -params.center.y;
+	shift_to_center.z = -params.center.z;
+	pixel = move(pixel, shift_to_center);
+	params.center = resize(params.center, params.size);
 	pixel = resize(pixel, params.size);
-	pixel = move(pixel, params.shift);
 	pixel = rotate_around_x(pixel, params.angle_x);
 	pixel = rotate_around_y(pixel, params.angle_y);
 	pixel = rotate_around_z(pixel, params.angle_z);
+	pixel = move(pixel, params.shift);
+	pixel = move(pixel, params.center);
 	return (pixel);
 }

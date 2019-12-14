@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/05 14:15:47 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 static	int		*len_of_rows(char ***tokens)
 {
-	int	i[2];
-	int	*imax;
+	int		i[2];
+	int		*imax;
 
 	if (!(imax = (int*)malloc(sizeof(int) * 2)))
 		read_map_error();

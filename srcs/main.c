@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 16:23:55 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int		main(int argc, char **argv)
 	params.size = SIZE;
 	params.angle_x = M_PI / 3;
 	params.angle_y = 0;
-	params.angle_z = M_PI / 6;
+	params.angle_z = 0;
+	params.center = find_center(map);
 	mlx_put_image_to_window(map.mlx, map.window, map.img, 0, 0);
 	draw(map, params);
 	print_menu(map);
