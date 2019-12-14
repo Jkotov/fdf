@@ -15,8 +15,8 @@
 
 static	int		*len_of_rows(char ***tokens)
 {
-	int		i[2];
-	int		*imax;
+	int	i[2];
+	int	*imax;
 
 	if (!(imax = (int*)malloc(sizeof(int) * 2)))
 		read_map_error();

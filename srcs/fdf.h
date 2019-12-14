@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/13 15:03:36 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 16:21:56 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdint.h>
 # include <stdlib.h>
 # define SIZE 30
-# define SHIFTX 200
-# define SHIFTY 200
+# define SHIFTX WIN_SIZE_X / 2
+# define SHIFTY WIN_SIZE_Y / 2
 # define SHIFTZ 0
 # define ANGLEX 10
 
@@ -42,6 +42,7 @@ typedef	struct	s_trasform_params
 	double		angle_x;
 	double		angle_y;
 	double		angle_z;
+	t_pixel		center;
 }				t_trasform_params;
 
 typedef	struct	s_map
@@ -80,5 +81,5 @@ void			put_pixel(t_pixel pixel, int **img_data,\
 int				init_start_values(int *delta_x, int *delta_err,\
 	t_pixel pxl_1st, t_pixel pxl_end);
 void			read_map_error(void);
-t_pixel			**map_scan(char const *file_name);
+t_map			map_scan(char const *file_name);
 #endif
