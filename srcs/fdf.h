@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 20:35:46 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 23:27:52 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef	struct		s_map
 	int				*img_data;
 	int				max_z;
 	int				min_z;
+	uint32_t		color_set;
 }					t_map;
 
 void				draw(t_map map, t_trasform_params p);

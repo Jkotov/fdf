@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 20:17:12 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 23:27:52 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		main(int argc, char **argv)
 	if (argc != 2)
 		read_map_error();
 	map = map_scan(argv[1]);
+	map.color_set = 0xffff;
 	params = transform_params_init(map);
 	mlx_put_image_to_window(map.mlx, map.window, map.img, 0, 0);
 	draw(map, params);
