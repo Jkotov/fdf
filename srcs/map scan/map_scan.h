@@ -17,7 +17,7 @@
 # include "fdf.h"
 
 char	*read_map(char const *file_name);
-t_pixel	**string_to_tokens(char *s);
-t_pixel	**tokens_to_matrix(char ***tokens);
+t_map	string_to_tokens(char *s);
+t_map	tokens_to_matrix(char ***tokens);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 23:18:55 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 18:52:51 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/14 21:47:35 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,17 @@ static	int		*len_of_rows(char ***tokens)
 	return (imax);
 }
 
-static	t_pixel	pxl_params(char *token, int x, int y)
+static	t_pixel	pxl_params(char *token, int x, int y, t_map *map)
 {
 	t_pixel	res;
 
 	res.y = y;
 	res.x = x;
 	res.z = ft_atoi(token);
+	if (res.z < map->min_z)
+		map->min_z = res.z;
+	if (res.z > map->max_z)
+		map->max_z = res.z;
 	res.color = 0xff000000;
 	if (ft_strchr(token, ','))
 		res.color = ft_atoi_base(ft_strchr(token, 'x') + 1, 16);
@@ -76,23 +80,26 @@ static	void	free_token_and_imax(char ***tokens, int *imax)
 	free(imax);
 }
 
-t_pixel			**tokens_to_matrix(char ***tokens)
+t_map			tokens_to_matrix(char ***tokens)
 {
 	int		i[2];
 	int		*imax;
-	t_pixel	**matrix;
+	t_map	map;
 
+	map.max_z = INT32_MIN;
+	map.min_z = INT32_MAX;
 	i[0] = -1;
 	imax = len_of_rows(tokens);
-	matrix = matrix_new(imax[1], imax[0]);
+	map.map = matrix_new(imax[1], imax[0]);
 	while (++i[0] < imax[0])
 	{
 		i[1] = -1;
 		while ((++i[1] <= imax[1]) && tokens[i[0]][i[1]])
-			matrix[i[0]][i[1]] = pxl_params(tokens[i[0]][i[1]], i[1], i[0]);
-		matrix[i[0]][i[1] - 1].is_exist_next = 0;
+			map.map[i[0]][i[1]] = pxl_params(tokens[i[0]][i[1]]\
+			, i[1], i[0], &map);
+		map.map[i[0]][i[1] - 1].is_exist_next = 0;
 	}
 	free_token_and_imax(tokens, imax);
-	matrix[i[0]] = NULL;
-	return (matrix);
+	map.map[i[0]] = NULL;
+	return (map);
 }

@@ -24,7 +24,7 @@ t_map	map_scan(char const *file_name)
 	line = WIN_SIZE_X;
 	endian = 0;
 	str = read_map(file_name);
-	map.map = string_to_tokens(str);
+	map = string_to_tokens(str);
 	map.mlx = mlx_init();
 	map.window = mlx_new_window(map.mlx, WIN_SIZE_X, WIN_SIZE_Y, "fdf");
 	map.img = mlx_new_image(map.mlx, WIN_SIZE_X, WIN_SIZE_Y);

@@ -13,12 +13,12 @@
 #include "map_scan.h"
 #include "libft.h"
 
-t_pixel		**string_to_tokens(char *s)
+t_map	string_to_tokens(char *s)
 {
 	char	**strings;
 	char	***tokens;
 	int		len;
-	t_pixel	**matrix;
+	t_map	map;
 
 	strings = ft_strsplit(s, '\n');
 	len = 0;
@@ -33,8 +33,8 @@ t_pixel		**string_to_tokens(char *s)
 		free(strings[len]);
 		strings[len] = NULL;
 	}
-	matrix = tokens_to_matrix(tokens);
+	map = tokens_to_matrix(tokens);
 	free(strings);
 	free(s);
-	return (matrix);
+	return (map);
 }
