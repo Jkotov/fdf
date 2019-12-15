@@ -6,7 +6,7 @@
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 13:53:29 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/15 18:37:25 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 20:46:35 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			push_key(int key, void *param)
 		keyboard_zoom(key, p);
 	if (key > 5 && key < 9)
 		keyboard_color(key, p);
-	if (key == 31)
+	if (key == 31 || key == 34)
 		keyboard_projetion(key, p);
 	return (0);
 }

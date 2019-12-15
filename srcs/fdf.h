@@ -43,12 +43,7 @@ typedef	struct		s_trasform_params
 	double			angle_y;
 	double			angle_z;
 	t_pixel			center;
-	char			key;
 }					t_trasform_params;
-
-/*
-** key = 0 for parallel projection, key = 1 for iso
-*/
 
 typedef	struct		s_map
 {

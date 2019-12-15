@@ -21,6 +21,8 @@ void	print_menu(t_map p)
 	60, 0xffFFFFFF, "ROTATE: X: 4/6 Y: 2/8 Z: 1/9");
 	mlx_string_put(p.mlx, p.window, 1500, 80, 0xffffff, "EXIT: ESC");
 	mlx_string_put(p.mlx, p.window, 1500, 100, 0xffffff, "COLOR SET: Z-C");
+	mlx_string_put(p.mlx, p.window, 1500, 120, 0xffffff, "ISOMETRIC: I");
+	mlx_string_put(p.mlx, p.window, 1500, 140, 0xffffff, "FRONTAL: O");
 }
 
 int		main(int argc, char **argv)
