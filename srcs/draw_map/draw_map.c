@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 23:16:06 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/15 16:10:33 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:40:21 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ void				draw(t_map map, t_trasform_params p)
 		draw_y_lines(map, p, i);
 	}
 	mlx_put_image_to_window(map.mlx, map.window, map.img, 0, 0);
+	print_menu(map);
 }

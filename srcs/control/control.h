@@ -27,5 +27,6 @@ void		keyboard_zoom(int key, t_control *p);
 int			push_key(int key, void *param);
 int			push_mouse(int key, t_control *p);
 void		keyboard_color(int key, t_control *p);
+void		keyboard_projetion(int key, t_control *p);
 
 #endif

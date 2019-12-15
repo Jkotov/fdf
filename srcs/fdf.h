@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:17:54 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/14 23:27:52 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:07:46 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ typedef	struct		s_trasform_params
 	double			angle_y;
 	double			angle_z;
 	t_pixel			center;
+	char			key;
 }					t_trasform_params;
+
+/*
+** key = 0 for parallel projection, key = 1 for iso
+*/
 
 typedef	struct		s_map
 {
