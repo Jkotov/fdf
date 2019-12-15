@@ -86,4 +86,5 @@ void				read_map_error(void);
 t_map				map_scan(char const *file_name);
 t_pixel				find_center(t_map map);
 t_trasform_params	transform_params_init(t_map map);
+uint32_t			color_set(t_pixel pixel, t_map map);
 #endif
