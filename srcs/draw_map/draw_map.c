@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 23:16:06 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/15 16:10:16 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 16:10:33 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ static	void		draw_y_lines(t_map map, t_trasform_params p, int i)
 		map.map[i + 1][j].color = color_set(map.map[i + 1][j], map);
 		line(all_trasforms(map.map[i][j], p),\
 			all_trasforms(map.map[i + 1][j], p), map.img_data);
+		map.map[i][j].color = tmp_color[0];
+		map.map[i + 1][j].color = tmp_color[1];
 		if (!(map.map[i][j].is_exist_next\
 			&& map.map[i + 1][j].is_exist_next))
 			break ;
-		map.map[i][j].color = tmp_color[0];
-		map.map[i + 1][j].color = tmp_color[1];
 	}
 }
 
