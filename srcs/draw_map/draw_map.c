@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 23:16:06 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/15 22:01:30 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 22:10:01 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static	void		draw_x_lines(t_map map, t_trasform_params p, int i)
 		tmp_pixel[1] = all_trasforms(map.map[i][j + 1], p);
 		tmp_pixel[0].color = color_set(map.map[i][j], map);
 		tmp_pixel[1].color = color_set(map.map[i][j + 1], map);
-		line(tmp_pixel[0], tmp_pixel[1], map.img_data);
+		if (tmp_pixel[0].x <= WIN_SIZE_X && tmp_pixel[0].y <= WIN_SIZE_Y)
+			line(tmp_pixel[0], tmp_pixel[1], map.img_data);
 	}
 }
 
@@ -40,7 +41,8 @@ static	void		draw_y_lines(t_map map, t_trasform_params p, int i)
 		tmp_pixel[1] = all_trasforms(map.map[i + 1][j], p);
 		tmp_pixel[0].color = color_set(map.map[i][j], map);
 		tmp_pixel[1].color = color_set(map.map[i + 1][j], map);
-		line(tmp_pixel[0], tmp_pixel[1], map.img_data);
+		if (tmp_pixel[0].x <= WIN_SIZE_X && tmp_pixel[0].y <= WIN_SIZE_Y)
+			line(tmp_pixel[0], tmp_pixel[1], map.img_data);
 		if (!(map.map[i][j].is_exist_next\
 			&& map.map[i + 1][j].is_exist_next))
 			break ;
