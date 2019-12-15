@@ -6,7 +6,7 @@
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 13:53:29 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/13 15:21:09 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/15 15:24:38 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void		keyboard_zoom(int key, t_control *p)
 	print_menu(*(p->map));
 }
 
+
 int			push_key(int key, void *param)
 {
 	t_control *p;
@@ -83,5 +84,7 @@ int			push_key(int key, void *param)
 		keyboard_rotate(key, p);
 	else if (key == 78 || key == 69)
 		keyboard_zoom(key, p);
+	if (key > 5 && key < 9)
+		keyboard_color(key, p);
 	return (0);
 }
