@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 15:28:02 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/15 15:40:57 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/16 17:58:02 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ void		keyboard_color(int key, t_control *p)
 			p->map->color_set += (uint32_t)0x0000ff;
 	}
 	draw(*(p->map), *(p->p));
-	print_menu(*(p->map));
 }

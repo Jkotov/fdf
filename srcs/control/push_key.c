@@ -6,7 +6,7 @@
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 13:53:29 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/15 20:46:35 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/16 17:22:49 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,17 @@ void		keyboard_rotate(int key, t_control *p)
 	draw(*(p->map), *(p->p));
 }
 
-void		keyboard_zoom(int key, t_control *p)
+void		key_zoom(int key, t_control *p)
 {
-	if (key == 78)
+	if (key == 78 || key == 5)
 		p->p->size--;
-	if (key == 69)
+	if (key == 69 || key == 4)
 		p->p->size++;
+	if (p->p->size < 1)
+		p->p->size = 1;
 	draw(*(p->map), *(p->p));
 	print_menu(*(p->map));
 }
-
 
 int			push_key(int key, void *param)
 {
@@ -78,7 +79,7 @@ int			push_key(int key, void *param)
 	key == 83 || key == 92)
 		keyboard_rotate(key, p);
 	else if (key == 78 || key == 69)
-		keyboard_zoom(key, p);
+		key_zoom(key, p);
 	if (key > 5 && key < 9)
 		keyboard_color(key, p);
 	if (key == 31 || key == 34)

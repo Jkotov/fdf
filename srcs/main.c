@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 13:08:43 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/15 21:26:24 by epainter         ###   ########.fr       */
+/*   Updated: 2019/12/16 16:36:47 by mdirect          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int		main(int argc, char **argv)
 	params = transform_params_init(map);
 	mlx_put_image_to_window(map.mlx, map.window, map.img, 0, 0);
 	draw(map, params);
-	print_menu(map);
 	push_control(&map, &params);
 	mlx_loop(map.mlx);
 }
