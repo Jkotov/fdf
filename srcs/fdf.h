@@ -65,6 +65,7 @@ t_pixel				rotate_around_x(t_pixel pixel, double angle);
 t_pixel				rotate_around_y(t_pixel pixel, double angle);
 t_pixel				rotate_around_z(t_pixel pixel, double angle);
 t_pixel				all_trasforms(t_pixel pixel, t_trasform_params params);
+t_pixel				central_projection(t_pixel pixel, t_pixel shift);
 t_pixel				move(t_pixel pixel, t_pixel shift);
 t_pixel				resize(t_pixel pixel, uint32_t size);
 void				line(t_pixel pxl_start, t_pixel pxl_end, int *img_data);
