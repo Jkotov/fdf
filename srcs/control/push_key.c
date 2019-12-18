@@ -6,7 +6,7 @@
 /*   By: mdirect <mdirect@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 13:53:29 by mdirect           #+#    #+#             */
-/*   Updated: 2019/12/16 17:22:49 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/18 19:18:40 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,13 @@
 void		keyboard_move(int key, t_control *p)
 {
 	if (key == 124)
-	{
 		p->p->shift.x = p->p->shift.x + 10;
-		p->p->shift.z = p->p->shift.z + 10;
-	}
 	if (key == 123)
-	{
 		p->p->shift.x = p->p->shift.x - 10;
-		p->p->shift.z = p->p->shift.z - 10;
-	}
 	if (key == 126)
-	{
 		p->p->shift.y = p->p->shift.y - 10;
-		p->p->shift.z = p->p->shift.z + 10;
-	}
 	if (key == 125)
-	{
 		p->p->shift.y = p->p->shift.y + 10;
-		p->p->shift.z = p->p->shift.z - 10;
-	}
 	draw(*p->map, *p->p);
 }
 
