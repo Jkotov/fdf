@@ -24,5 +24,6 @@ t_trasform_params	transform_params_init(t_map map)
 	params.angle_y = 0;
 	params.angle_z = 0;
 	params.center = find_center(map);
+	params.is_central_projection = 0;
 	return (params);
 }

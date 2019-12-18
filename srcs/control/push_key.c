@@ -82,7 +82,7 @@ int			push_key(int key, void *param)
 		key_zoom(key, p);
 	if (key > 5 && key < 9)
 		keyboard_color(key, p);
-	if (key == 31 || key == 34)
+	if (key == 31 || key == 34 || key == 35)
 		keyboard_projetion(key, p);
 	return (0);
 }

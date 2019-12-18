@@ -23,6 +23,7 @@ void	print_menu(t_map p)
 	mlx_string_put(p.mlx, p.window, 1500, 100, 0xffffff, "COLOR SET: Z-C");
 	mlx_string_put(p.mlx, p.window, 1500, 120, 0xffffff, "ISOMETRIC: I");
 	mlx_string_put(p.mlx, p.window, 1500, 140, 0xffffff, "FRONTAL: O");
+	mlx_string_put(p.mlx, p.window, 1500, 160, 0xffffff, "CENTRAL: P");
 }
 
 int		main(int argc, char **argv)

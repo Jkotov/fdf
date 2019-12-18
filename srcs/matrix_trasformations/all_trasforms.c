@@ -27,6 +27,7 @@ t_pixel		all_trasforms(t_pixel pixel, t_trasform_params params)
 	pixel = rotate_around_z(pixel, params.angle_z);
 	pixel = move(pixel, params.shift);
 	pixel = move(pixel, params.center);
-	pixel = central_projection(pixel, params.shift);
+	if (params.is_central_projection)
+		pixel = central_projection(pixel, params.shift);
 	return (pixel);
 }

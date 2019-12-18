@@ -22,8 +22,10 @@ t_pixel	central_projection(t_pixel pixel, t_pixel shift)
 	z = 900;
 	if (pixel.z != shift.z)
 	{
-		pixel.x = ((z - shift.z) * (pixel.x - shift.x)) / (pixel.z - shift.z) + shift.x;
-		pixel.y = ((z - shift.z) * (pixel.y - shift.y)) / (pixel.z - shift.z) + shift.y;
+		pixel.x = ((z - shift.z) * (pixel.x - shift.x))\
+		/ (pixel.z - shift.z) + shift.x;
+		pixel.y = ((z - shift.z) * (pixel.y - shift.y))\
+		/ (pixel.z - shift.z) + shift.y;
 	}
 	return (pixel);
 }

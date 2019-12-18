@@ -43,6 +43,7 @@ typedef	struct		s_trasform_params
 	double			angle_y;
 	double			angle_z;
 	t_pixel			center;
+	uint8_t			is_central_projection;
 }					t_trasform_params;
 
 typedef	struct		s_map
