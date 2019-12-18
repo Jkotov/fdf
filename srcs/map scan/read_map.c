@@ -6,7 +6,7 @@
 /*   By: epainter <epainter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 18:36:26 by epainter          #+#    #+#             */
-/*   Updated: 2019/12/16 16:36:47 by mdirect          ###   ########.fr       */
+/*   Updated: 2019/12/18 13:26:40 by epainter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-#define BUFFSIZE 1024
+#define BUFFSIZE 4096
 
 char	*read_map(char const *file_name)
 {

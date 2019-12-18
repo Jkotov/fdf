@@ -24,7 +24,7 @@
 # define SHIFTX 0
 # define SHIFTY 0
 # define SHIFTZ 0
-# define ANGLEX 10
+# define Z_MAX 3000
 
 typedef	struct		s_pixel
 {
